@@ -13,6 +13,19 @@ final class CoreGraphicExtensionTests: XCTestCase {
         XCTAssertEqual(rightAngle, CGFloat.pi/2)
         XCTAssertEqual(rightAngle.degrees, 90)
         XCTAssertEqual(rightAngle.radians, CGFloat.pi/2)
+        
+        //Test factory methods
+        let fromDegree = CGAngle.degrees(90.0)
+        
+        XCTAssertEqual(fromDegree, CGFloat.pi/2)
+        XCTAssertEqual(fromDegree.degrees, 90)
+        XCTAssertEqual(fromDegree.radians, CGFloat.pi/2)
+        
+        let fromRadians = CGAngle.radians(Double.pi/2)
+        
+        XCTAssertEqual(fromRadians, CGFloat.pi/2)
+        XCTAssertEqual(fromRadians.degrees, 90)
+        XCTAssertEqual(fromRadians.radians, CGFloat.pi/2)
     }
     
     func testPolarPoint() {

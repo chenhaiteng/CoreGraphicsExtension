@@ -18,4 +18,12 @@ extension CGAngle {
     public var degrees: CGFloat {
         self*180/CGFloat.pi
     }
+    
+    @inlinable public static func radians<T: BinaryFloatingPoint>(_ radians: T) -> CGAngle {
+        CGAngle(radians)
+    }
+    
+    @inlinable public static func degrees<T: BinaryFloatingPoint>(_ degrees: T) -> CGAngle {
+        return CGAngle(degrees*T.pi/180)
+    }
 }

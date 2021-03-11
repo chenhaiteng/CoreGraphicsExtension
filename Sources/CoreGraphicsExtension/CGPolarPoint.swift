@@ -22,6 +22,8 @@ public struct CGPolarPoint {
     @inlinable public init<T: BinaryFloatingPoint>(radius: T, angle: CGAngle) {
         self.radius = CGFloat(radius)
         cgangle = angle
-        cgpoint = CGPoint(x: self.radius*cos(cgangle.radians), y: self.radius*sin(cgangle.radians))
+        let _cos: CGFloat = cos(cgangle.radians)
+        let _sin: CGFloat = sin(cgangle.radians)
+        cgpoint = CGPoint(x: self.radius*_cos, y: self.radius*_sin)
     }
 }

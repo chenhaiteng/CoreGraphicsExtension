@@ -37,21 +37,23 @@ let rectPt = rightUpPoint.cgpoint
 ```
 
 ## Installation:
-### Swift Package Manager
-- Add to Xcode:
+### Install with Swift Package Manager
+#### - Add to Xcode:
 
 1. File > Swift Packages > Add Package Dependency...
 2. Choose Project you want to add CoreGraphicExtension
 3. Paste repository https://github.com/chenhaiteng/CoreGraphicsExtension.git
 4. Rules > Version: Up to Next Major 0.3.1
 It's can also apply Rules > Branch : Main to access latest code.
-**Note:** It might need to link CoreGraphicsExtension to your target maunally.
-5. Open *Project Editor* by tap on root of project navigator
-6. Choose the target you want to use CoreGraphicsExtension.
-7. Choose **Build Phases**, and expand **Link Binary With Libraries**
-8. Tap on **+** button, and choose CoreGraphics to add it.
 
-- Add to SPM package: 
+**Note:** It might need to link CoreGraphicsExtension to your target maunally.
+
+1. Open *Project Editor* by tap on root of project navigator
+2. Choose the target you want to use CoreGraphicsExtension.
+3. Choose **Build Phases**, and expand **Link Binary With Libraries**
+4. Tap on **+** button, and choose CoreGraphics to add it.
+
+#### - Add to SPM package: 
 ```swift
 dependencies: [
     .package(name: "CoreGraphicsExtension", url: "https://github.com/chenhaiteng/CoreGraphicsExtension.git", from: "0.3.1")

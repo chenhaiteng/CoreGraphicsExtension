@@ -1,4 +1,4 @@
-# CoreGraphicsExtension ![GitHub](https://img.shields.io/github/license/chenhaiteng/coregraphicsextension?style=for-the-badge)
+# CoreGraphicsExtension ![GitHub](https://img.shields.io/github/license/chenhaiteng/coregraphicsextension?style=plastic)
 
 A small libray to provide polar coordinate feature to extend CoreGraphics
 

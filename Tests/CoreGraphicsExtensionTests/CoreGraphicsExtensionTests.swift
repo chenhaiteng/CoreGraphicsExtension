@@ -44,9 +44,62 @@ final class CoreGraphicExtensionTests: XCTestCase {
         //For floating precisly problem, it cannot compare with CGPoint(x: 1.0, y: 1.0) directly.
         XCTAssertEqual(rightUpPoint.cgpoint, CGPoint(x: __Cos45*CGFloat(sqrt(2)), y:1))
     }
+    
+    func testCGPointOffset() {
+        let basePt = CGPoint.zero
+        let offsetPt = CGPoint(x: 1, y: 1)
+        XCTAssertEqual(basePt.offset(by: offsetPt), offsetPt)
+        XCTAssertEqual(basePt >> offsetPt, offsetPt)
+        
+        let offsetSize = CGSize(width: 1, height: 1)
+        XCTAssertEqual(basePt.offset(by: offsetSize), offsetPt)
+        XCTAssertEqual(basePt >> offsetSize, offsetPt)
+        
+        XCTAssertEqual(basePt.offset(dx: 1, dy: 1), offsetPt)
+        XCTAssertEqual(basePt >> (1, 1), offsetPt)
+    }
+    
+    func testCGRectFitSqure() {
+        let originRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+        let originRectLandscape = CGRect(origin: .zero, size: CGSize(width: 120, height: 100))
+        let originSquare = CGRect(origin: .zero, size: CGSize(width:90.0, height: 90.0))
+        
+        XCTAssertEqual(originRect.fitSqure(), CGRect(x: 0, y: 10, width: 100, height: 100))
+        XCTAssertEqual(originRectLandscape.fitSqure(), CGRect(x: 10, y: 0, width: 100, height: 100))
+        XCTAssertEqual(originSquare.fitSqure(), originSquare)
+        
+    }
+    
+    func testCGRectOffset() {
+        let baseRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+        let offsetPt = CGPoint(x: 1, y: 1)
+        XCTAssertNotEqual((baseRect >> offsetPt).origin, baseRect.origin)
+        XCTAssertEqual((baseRect >> offsetPt).origin, offsetPt)
+        XCTAssertEqual((baseRect >> offsetPt).size, baseRect.size)
+        
+        let offsetSize = CGSize(width: 1, height: 1)
+        
+        XCTAssertEqual((baseRect >> offsetSize).origin, offsetPt)
+        XCTAssertEqual((baseRect >> offsetSize).size, baseRect.size)
+        
+        XCTAssertEqual((baseRect >> (1, 1)).origin, offsetPt)
+        XCTAssertEqual((baseRect >> (1, 1)).size, baseRect.size)
+        
+    }
+    
+    func testCGRectCenter() {
+        let rect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+        XCTAssertEqual(rect.center, CGPoint(x: 50, y: 60))
+        let infRect = CGRect(origin: .zero, size: CGSize(width: 100, height: CGFloat.infinity))
+        XCTAssertEqual(infRect.center, CGPoint(x: 50, y: CGFloat.infinity))
+    }
 
     static var allTests = [
         ("CGAngle", testCGAngle),
         ("CGPolarPoint", testPolarPoint),
+        ("CGPoint+Offset", testCGPointOffset),
+        ("CGRect+Offset", testCGRectOffset),
+        ("CGRectFitSqure", testCGRectFitSqure),
+        ("CGRect+Center", testCGRectCenter)
     ]
 }

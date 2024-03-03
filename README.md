@@ -35,6 +35,38 @@ let rightUpPoint = CGPolarPoint(radius: CGFloat(sqrt(2)), angle: CGAngle.pi/4)
 // Get point in rectangular coordinate:
 let rectPt = rightUpPoint.cgpoint
 ```
+### CGPoint(Offset)
+Apply convenient offset functions on CGPoint.
+
+#### Usage:
+```swift
+let basePt = CGPoint.zero
+
+// Offset the base point by a CGPoint.
+let offsetPt = CGPoint(x: 1, y: 1)
+XCTAssertEqual(basePt.offset(by: offsetPt), offsetPt)
+XCTAssertEqual(basePt >> offsetPt, offsetPt)
+
+// Offset the base point by a CGSize.
+let offsetSize = CGSize(width: 1, height: 1)
+XCTAssertEqual(basePt.offset(by: offsetSize), offsetPt)
+XCTAssertEqual(basePt >> offsetSize, offsetPt)
+
+// Offset the base point by specified dx and dy
+XCTAssertEqual(basePt.offset(dx: 1, dy: 1), offsetPt)
+XCTAssertEqual(basePt >> (1, 1), offsetPt)
+
+```
+
+### CGRect(FitSquare)
+Create a derived square rect that scale to fit its source rect with the same center point.
+
+#### Usage:
+```swift
+let originRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+XCTAssertEqual(originRect.fitSqure(), CGRect(x: 0, y: 10, width: 100, height: 100))
+
+```
 
 ## Installation:
 ### Install with Swift Package Manager

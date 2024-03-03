@@ -8,7 +8,7 @@
 import Foundation
 import CoreGraphics
 
-extension CGAffineTransform {
+public extension CGAffineTransform {
     /// Create a transform that rotate around the specified center with given angle.
     static func rotateTransfrom(around center: CGPoint, by angle: CGAngle) -> CGAffineTransform {
         CGAffineTransform(translationX: center.x, y: center.y)

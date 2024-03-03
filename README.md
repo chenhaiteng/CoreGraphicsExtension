@@ -68,6 +68,15 @@ XCTAssertEqual(originRect.fitSqure(), CGRect(x: 0, y: 10, width: 100, height: 10
 
 ```
 
+### CGRect(Center)
+A computed variable that return current center of the rect.
+
+### Usage:
+```
+let rect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+let center = rect.center
+```
+
 ## Installation:
 ### Install with Swift Package Manager
 #### - Add to Xcode:

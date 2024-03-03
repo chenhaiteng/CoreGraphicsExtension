@@ -69,6 +69,13 @@ final class CoreGraphicExtensionTests: XCTestCase {
         XCTAssertEqual(originSquare.fitSqure(), originSquare)
         
     }
+    
+    func testCGRectCenter() {
+        let rect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+        XCTAssertEqual(rect.center, CGPoint(x: 50, y: 60))
+        let infRect = CGRect(origin: .zero, size: CGSize(width: 100, height: CGFloat.infinity))
+        XCTAssertEqual(infRect.center, CGPoint(x: 50, y: CGFloat.infinity))
+    }
 
     static var allTests = [
         ("CGAngle", testCGAngle),

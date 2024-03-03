@@ -88,7 +88,7 @@ Create a derived square rect that scale to fit its source rect with the same cen
 #### Usage:
 ```swift
 let originRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
-XCTAssertEqual(originRect.fitSqure(), CGRect(x: 0, y: 10, width: 100, height: 100))
+XCTAssertEqual(originRect.fitSquare(), CGRect(x: 0, y: 10, width: 100, height: 100))
 
 ```
 

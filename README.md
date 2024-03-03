@@ -38,7 +38,7 @@ let rightUpPoint = CGPolarPoint(radius: CGFloat(sqrt(2)), angle: CGAngle.pi/4)
 let rectPt = rightUpPoint.cgpoint
 ```
 ### CGPoint(Offset)
-Apply convenient offset functions on CGPoint.
+Apply convenient offset functions and operator(>>) on CGPoint.
 
 #### Usage:
 ```swift
@@ -58,6 +58,28 @@ XCTAssertEqual(basePt >> offsetSize, offsetPt)
 XCTAssertEqual(basePt.offset(dx: 1, dy: 1), offsetPt)
 XCTAssertEqual(basePt >> (1, 1), offsetPt)
 
+```
+
+### CGRect(Offset)
+Apply convenient offset operator(>>) on CGRect.
+#### Usage:
+```swift
+let baseRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+
+// Offset the rect by CGPoint
+let offsetPt = CGPoint(x: 1, y: 1)
+XCTAssertNotEqual((baseRect >> offsetPt).origin, baseRect.origin)
+XCTAssertEqual((baseRect >> offsetPt).origin, offsetPt)
+XCTAssertEqual((baseRect >> offsetPt).size, baseRect.size)
+
+// Offset the rect by CGSize
+let offsetSize = CGSize(width: 1, height: 1)
+XCTAssertEqual((baseRect >> offsetSize).origin, offsetPt)
+XCTAssertEqual((baseRect >> offsetSize).size, baseRect.size)
+
+// Offset the rect by specified dx, dy.
+XCTAssertEqual((baseRect >> (1, 1)).origin, offsetPt)
+XCTAssertEqual((baseRect >> (1, 1)).size, baseRect.size)
 ```
 
 ### CGRect(FitSquare)

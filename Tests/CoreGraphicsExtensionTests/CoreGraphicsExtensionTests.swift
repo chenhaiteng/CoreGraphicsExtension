@@ -70,6 +70,23 @@ final class CoreGraphicExtensionTests: XCTestCase {
         
     }
     
+    func testCGRectOffset() {
+        let baseRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
+        let offsetPt = CGPoint(x: 1, y: 1)
+        XCTAssertNotEqual((baseRect >> offsetPt).origin, baseRect.origin)
+        XCTAssertEqual((baseRect >> offsetPt).origin, offsetPt)
+        XCTAssertEqual((baseRect >> offsetPt).size, baseRect.size)
+        
+        let offsetSize = CGSize(width: 1, height: 1)
+        
+        XCTAssertEqual((baseRect >> offsetSize).origin, offsetPt)
+        XCTAssertEqual((baseRect >> offsetSize).size, baseRect.size)
+        
+        XCTAssertEqual((baseRect >> (1, 1)).origin, offsetPt)
+        XCTAssertEqual((baseRect >> (1, 1)).size, baseRect.size)
+        
+    }
+    
     func testCGRectCenter() {
         let rect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
         XCTAssertEqual(rect.center, CGPoint(x: 50, y: 60))
@@ -80,7 +97,9 @@ final class CoreGraphicExtensionTests: XCTestCase {
     static var allTests = [
         ("CGAngle", testCGAngle),
         ("CGPolarPoint", testPolarPoint),
-        ("CGPoint+OFfset", testCGPointOffset),
-        ("CGRectFitSqure", testCGRectFitSqure)
+        ("CGPoint+Offset", testCGPointOffset),
+        ("CGRect+Offset", testCGRectOffset),
+        ("CGRectFitSqure", testCGRectFitSqure),
+        ("CGRect+Center", testCGRectCenter)
     ]
 }

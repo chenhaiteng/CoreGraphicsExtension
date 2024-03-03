@@ -2,6 +2,8 @@
 
 A small libray to provide polar coordinate feature to extend CoreGraphics
 
+<a href="https://www.buymeacoffee.com/chenhaiteng"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=chenhaiteng&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+
 ## Features:
 ### CGAngle
 The alias of CGFloat, and presume its unit as radians.
@@ -108,3 +110,5 @@ targets: [
 
 # License
 CoreGraphicsExtension is released under the [MIT License](LICENSE).
+
+<a href="https://www.buymeacoffee.com/chenhaiteng"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=chenhaiteng&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>

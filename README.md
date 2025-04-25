@@ -2,7 +2,44 @@
 
 A small libray to provide polar coordinate feature to extend CoreGraphics
 
-<a href="https://www.buymeacoffee.com/chenhaiteng"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=chenhaiteng&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+
+## Installation:
+
+### CocoaPods
+CoreGraphicsExtension is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'CoreGraphicsExtension'
+```
+
+### Swift Package Manager
+#### - Add to Xcode:
+
+1. File > Swift Packages > Add Package Dependency...
+2. Choose Project you want to add CoreGraphicExtension
+3. Paste repository https://github.com/chenhaiteng/CoreGraphicsExtension.git
+4. Rules > Version: Up to Next Major 0.3.1
+It's can also apply Rules > Branch : Main to access latest code.
+
+**Note:** It might need to link CoreGraphicsExtension to your target maunally.
+
+1. Open *Project Editor* by tap on root of project navigator
+2. Choose the target you want to use CoreGraphicsExtension.
+3. Choose **Build Phases**, and expand **Link Binary With Libraries**
+4. Tap on **+** button, and choose CoreGraphics to add it.
+
+#### - Add to SPM package: 
+```swift
+dependencies: [
+    .package(name: "CoreGraphicsExtension", url: "https://github.com/chenhaiteng/CoreGraphicsExtension.git", from: "0.3.1")
+],
+targets: [
+    .target(
+        name: "MyPackage",
+        dependencies: ["CoreGraphicsExtension"]),
+]
+```
 
 ## Features:
 ### CGAngle
@@ -88,7 +125,7 @@ Create a derived square rect that scale to fit its source rect with the same cen
 #### Usage:
 ```swift
 let originRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
-XCTAssertEqual(originRect.fitSqure(), CGRect(x: 0, y: 10, width: 100, height: 100))
+XCTAssertEqual(originRect.fitSquare(), CGRect(x: 0, y: 10, width: 100, height: 100))
 
 ```
 
@@ -101,36 +138,9 @@ let rect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
 let center = rect.center
 ```
 
-## Installation:
-### Install with Swift Package Manager
-#### - Add to Xcode:
-
-1. File > Swift Packages > Add Package Dependency...
-2. Choose Project you want to add CoreGraphicExtension
-3. Paste repository https://github.com/chenhaiteng/CoreGraphicsExtension.git
-4. Rules > Version: Up to Next Major 0.3.1
-It's can also apply Rules > Branch : Main to access latest code.
-
-**Note:** It might need to link CoreGraphicsExtension to your target maunally.
-
-1. Open *Project Editor* by tap on root of project navigator
-2. Choose the target you want to use CoreGraphicsExtension.
-3. Choose **Build Phases**, and expand **Link Binary With Libraries**
-4. Tap on **+** button, and choose CoreGraphics to add it.
-
-#### - Add to SPM package: 
-```swift
-dependencies: [
-    .package(name: "CoreGraphicsExtension", url: "https://github.com/chenhaiteng/CoreGraphicsExtension.git", from: "0.3.1")
-],
-targets: [
-    .target(
-        name: "MyPackage",
-        dependencies: ["CoreGraphicsExtension"]),
-]
-```
-
 # License
 CoreGraphicsExtension is released under the [MIT License](LICENSE).
+---
 
+If you find this library useful, one coffee could help it going.
 <a href="https://www.buymeacoffee.com/chenhaiteng"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=chenhaiteng&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>

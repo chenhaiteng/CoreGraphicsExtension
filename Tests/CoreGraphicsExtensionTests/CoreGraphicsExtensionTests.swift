@@ -59,14 +59,14 @@ final class CoreGraphicExtensionTests: XCTestCase {
         XCTAssertEqual(basePt >> (1, 1), offsetPt)
     }
     
-    func testCGRectFitSqure() {
+    func testCGRectFitSquare() {
         let originRect = CGRect(origin: .zero, size: CGSize(width: 100, height: 120))
         let originRectLandscape = CGRect(origin: .zero, size: CGSize(width: 120, height: 100))
         let originSquare = CGRect(origin: .zero, size: CGSize(width:90.0, height: 90.0))
         
-        XCTAssertEqual(originRect.fitSqure(), CGRect(x: 0, y: 10, width: 100, height: 100))
-        XCTAssertEqual(originRectLandscape.fitSqure(), CGRect(x: 10, y: 0, width: 100, height: 100))
-        XCTAssertEqual(originSquare.fitSqure(), originSquare)
+        XCTAssertEqual(originRect.fitSquare(), CGRect(x: 0, y: 10, width: 100, height: 100))
+        XCTAssertEqual(originRectLandscape.fitSquare(), CGRect(x: 10, y: 0, width: 100, height: 100))
+        XCTAssertEqual(originSquare.fitSquare(), originSquare)
         
     }
     
@@ -99,7 +99,7 @@ final class CoreGraphicExtensionTests: XCTestCase {
         ("CGPolarPoint", testPolarPoint),
         ("CGPoint+Offset", testCGPointOffset),
         ("CGRect+Offset", testCGRectOffset),
-        ("CGRectFitSqure", testCGRectFitSqure),
+        ("CGRectFitSquare", testCGRectFitSquare),
         ("CGRect+Center", testCGRectCenter)
     ]
 }

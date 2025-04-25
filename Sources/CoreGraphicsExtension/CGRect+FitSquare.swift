@@ -1,5 +1,5 @@
 //
-//  CGRect+FitSqure.swift
+//  CGRect+FitSquare.swift
 //
 //
 //  Created by Chen Hai Teng on 3/3/24.
@@ -19,7 +19,7 @@ extension CGSize {
 }
 
 public extension CGRect {
-    func fitSqure() -> CGRect {
+    func fitSquare() -> CGRect {
         guard !isEmpty, !isNull, !isInfinite  else {
             return .zero
         }

@@ -8,8 +8,8 @@
 import Foundation
 import CoreGraphics
 
-public struct CGPolarPoint {
-    public static var zero = CGPolarPoint()
+public struct CGPolarPoint : Sendable {
+    public static let zero = CGPolarPoint()
     public var radius: CGFloat
     public var cgangle: CGAngle
     public var cgpoint: CGPoint

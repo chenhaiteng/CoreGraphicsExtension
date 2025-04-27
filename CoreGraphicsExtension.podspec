@@ -8,10 +8,10 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CoreGraphicsExtension'
-  s.version          = '0.4.2'
+  s.version          = '0.5.0'
   s.summary          = 'A small libray to provide polar coordinate feature and some convienet extension of CoreGraphics'
 # s.swift_version:begin
-  s.swift_version  = '5.3.0'
+  s.swift_version  = '6.1.0'
   # s.swift_version    = '${SWIFT_VERSION}'
 
 # s.platform:begin

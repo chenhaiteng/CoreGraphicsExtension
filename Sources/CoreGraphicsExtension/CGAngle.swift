@@ -11,7 +11,7 @@ import CoreGraphics
 public typealias CGAngle = CGFloat
 
 extension CGAngle {
-    public static var zero: CGFloat = 0.0
+    public static let zero: CGFloat = 0.0
     public var radians: CGFloat {
         self
     }
